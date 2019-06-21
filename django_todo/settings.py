@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -74,12 +75,14 @@ WSGI_APPLICATION = 'django_todo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASES = {
+"""DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
-}
+}"""
+
+DATABASES = {'default': dj_database_url.parse('postgres://rsdstymqkvxzzx:2ecbc3d74d610cb669fd3cd4b946611c37bd7c65656bea8b3bebe7627947de54@ec2-54-228-207-163.eu-west-1.compute.amazonaws.com:5432/d2forftbn8l503')}
 
 
 # Password validation
